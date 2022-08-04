@@ -9,6 +9,6 @@ app.get('/', (req, res) => {
   res.send('merhabalar olsun');
 });
 
-app.listen(() => {
+app.listen(process.env.PORT, () => {
   console.log('started nodu');
 });
