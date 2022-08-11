@@ -13,7 +13,7 @@ var cities = [{name: 'Istanbul', country: 'Turkey'}, {name: 'New York', country:
 app.use("/", router);
 router.get("/", (req,res)=>{
   res.status(200).setHeader('Content-Type', 'application/json').json(cities)
-  return json(cities)
+  
 })
 
 
