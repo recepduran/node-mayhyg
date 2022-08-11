@@ -27,7 +27,7 @@ router.get("/", cors(corsOptions), (req,res) =>{
 })
 router.get("/cities", cors(corsOptions), (req,res)=>{
   res.status(200).setHeader('Content-Type', 'application/json').json(cities)
-  return json(cities)
+  
 })
 
 
