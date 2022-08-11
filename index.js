@@ -1,6 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser")
+var cors = require('cors')
+
 const app = express();
+
+
+ var corsOptions = {
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}
 
 const router = express.Router();
 
@@ -12,10 +22,10 @@ var cities = [{name: 'Istanbul', country: 'Turkey'}, {name: 'New York', country:
 
 app.use("/", router);
 
-router.get("/", (req,res) =>{
+router.get("/", cors(corsOptions), (req,res) =>{
   res.send("oldu sanurum")
 })
-router.get("/cities", (req,res)=>{
+router.get("/cities", cors(corsOptions), (req,res)=>{
   res.status(200).setHeader('Content-Type', 'application/json').json(cities)
   return json(cities)
 })
