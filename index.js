@@ -4,8 +4,7 @@ var cors = require('cors')
 
 const app = express();
 
-
- var corsOptions = {
+var corsOptions = {
   "origin": "*",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
   "preflightContinue": false,
@@ -26,10 +25,8 @@ router.get("/", cors(corsOptions), (req,res) =>{
   res.send("oldu sanurum")
 })
 router.get("/cities", cors(corsOptions), (req,res)=>{
-  res.status(200).setHeader('Content-Type', 'application/json').json(cities)
-  
+  res.status(200)..json(cities)
 })
-
 
 app.listen(process.env.PORT, () => {
   console.log('server started');
