@@ -11,12 +11,16 @@ app.use(bodyParser.json());
 var cities = [{name: 'Istanbul', country: 'Turkey'}, {name: 'New York', country: 'USA'}, {name: 'London', country:'England'}];
 
 app.use("/", router);
-router.get("/", (req,res)=>{
+
+router.get("/", (req,res) =>{
+  res.send("oldu sanurum")
+})
+router.get("/cities", (req,res)=>{
   res.status(200).setHeader('Content-Type', 'application/json').json(cities)
-  
+  return json(cities)
 })
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('server started');
 });
