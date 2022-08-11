@@ -25,7 +25,7 @@ router.get("/", cors(corsOptions), (req,res) =>{
   res.send("oldu sanurum")
 })
 router.get("/cities", cors(corsOptions), (req,res)=>{
-  res.status(200)..json(cities)
+  res.status(200).json(cities)
 })
 
 app.listen(process.env.PORT, () => {
